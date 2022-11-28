@@ -18,13 +18,16 @@ public class Start extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.startLogin);
         Button reg = (Button) findViewById(R.id.startRegister);
 
+        Intent i = new Intent();
+
         login.setOnClickListener(view -> {
-            Intent i = new Intent(getApplicationContext(), Login.class);
+            i.setClass(getApplicationContext(), Login.class);
             startActivity(i);
         });
 
         reg.setOnClickListener(view -> {
-
+            i.setClass(getApplicationContext(), Register.class);
+            startActivity(i);
         });
     }
 

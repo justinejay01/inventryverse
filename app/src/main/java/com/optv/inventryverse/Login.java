@@ -1,12 +1,14 @@
 package com.optv.inventryverse;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.optv.inventryverse.Admin.Dashboard;
 
 public class Login extends AppCompatActivity {
 
@@ -19,11 +21,15 @@ public class Login extends AppCompatActivity {
         TextInputEditText pword = (TextInputEditText) findViewById(R.id.loginPassword);
         Button login = (Button) findViewById(R.id.loginLogin);
 
+        Intent i = new Intent();
         login.setOnClickListener(view -> {
-            AlertDialog.Builder b = new AlertDialog.Builder(getApplicationContext());
-            b.setTitle("Account Credentials")
-                    .setMessage("Username: " + uname.getText() + "\nPassword: " + pword.getText());
-            AlertDialog d = b.create();
+            if (String.valueOf(uname.getText()).equals("admin") && String.valueOf(pword.getText()).equals("admin")) {
+                Toast.makeText(getApplicationContext(), "Successful!", Toast.LENGTH_LONG).show();
+                i.setClass(getApplicationContext(), Dashboard.class);
+                startActivity(i);
+            } else {
+                Toast.makeText(getApplicationContext(), "Invalid credentials!", Toast.LENGTH_LONG).show();
+            }
         });
     }
 }

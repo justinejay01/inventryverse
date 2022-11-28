@@ -6,5 +6,5 @@
         android:title="Settings"
         android:id="@+id/adminSettings"
         android:icon="@android:drawable/ic_menu_preferences"
-        app:showAsAction="never"/>
+        app:showAsAction="collapseActionView"/>
 </menu>

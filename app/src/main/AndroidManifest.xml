@@ -13,22 +13,33 @@
         android:theme="@style/Theme.InventryVerse"
         tools:targetApi="31">
         <activity
+            android:name=".Admin.Settings"
+            android:exported="false"
+            android:label="@string/title_activity_settings">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Admin.Dashboard"
-            android:exported="false">
+            android:exported="false"
+            android:label="Dashboard">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Register"
-            android:exported="false">
+            android:exported="false"
+            android:label="Register">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".Login"
-            android:exported="false">
+            android:exported="false"
+            android:label="Log In">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

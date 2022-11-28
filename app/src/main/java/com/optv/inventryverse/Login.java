@@ -1,9 +1,11 @@
 package com.optv.inventryverse;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,6 +18,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextInputEditText uname = (TextInputEditText) findViewById(R.id.loginUsername);
         TextInputEditText pword = (TextInputEditText) findViewById(R.id.loginPassword);
@@ -31,5 +35,12 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Invalid credentials!", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent i = new Intent(getApplicationContext(), Start.class);
+        startActivity(i);
+        return true;
     }
 }

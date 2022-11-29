@@ -13,8 +13,17 @@
         android:theme="@style/Theme.InventryVerse"
         tools:targetApi="31">
         <activity
+            android:name=".AddProducts"
+            android:exported="false"
+            android:label="Add Products">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Products"
-            android:exported="false">
+            android:exported="false"
+            android:label="Products">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

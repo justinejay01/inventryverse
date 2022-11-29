@@ -145,7 +145,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="5dp"
                 android:drawableTop="@drawable/ic_category_24"
-                android:text="Stocks" />
+                android:text="Stocks"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
+import com.optv.inventryverse.Products;
 import com.optv.inventryverse.R;
 
 public class Dashboard extends AppCompatActivity {
@@ -19,6 +21,13 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
+
+        Button products = (Button) findViewById(R.id.prodDash);
+
+        products.setOnClickListener(view -> {
+            Intent i = new Intent(this, Products.class);
+            startActivity(i);
+        });
     }
 
     @Override

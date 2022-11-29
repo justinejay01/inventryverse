@@ -130,21 +130,24 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/prodDash"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_category_24"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="5dp"
-                android:drawableTop="@drawable/ic_category_24"
                 android:text="Products" />
 
             <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_warehouse"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="5dp"
-                android:drawableTop="@drawable/ic_category_24"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
                 android:text="Stocks"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -155,6 +158,8 @@
             android:orientation="horizontal">
 
             <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_receipt_long_24"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
@@ -163,6 +168,8 @@
                 android:text="Reports" />
 
             <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_store_24"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
@@ -178,6 +185,8 @@
             android:orientation="horizontal">
 
             <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_point_of_sale_24"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
@@ -186,6 +195,8 @@
                 android:text="Transactions" />
 
             <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:icon="@drawable/ic_people_24"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"

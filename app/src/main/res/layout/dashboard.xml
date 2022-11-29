@@ -135,14 +135,16 @@
                 android:layout_weight="1"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="5dp"
+                android:drawableTop="@drawable/ic_category_24"
                 android:text="Products" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:drawableTop="@drawable/ic_category_24"
                 android:text="Stocks" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

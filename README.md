@@ -1,6 +1,6 @@
 # InventryVerse
 InventryVerse - Mobile Inventory System
 
-Current version: v1-alpha3
+Current version: v1-alpha4
 
 APK File: (Not Available)

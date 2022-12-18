@@ -1,4 +1,4 @@
-package com.optv.inventryverse.Admin;
+package com.optv.inventryverse;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.optv.inventryverse.Products;
-import com.optv.inventryverse.R;
+import com.optv.inventryverse.Admin.Settings;
 
 public class Dashboard extends AppCompatActivity {
 

@@ -3,6 +3,7 @@ package com.optv.inventryverse;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,28 +11,47 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.common.hash.Hashing;
+
+import java.nio.charset.StandardCharsets;
 
 public class Login extends AppCompatActivity {
+
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        db = new DBHelper(this);
 
         TextInputEditText uname = (TextInputEditText) findViewById(R.id.loginUsername);
         TextInputEditText pword = (TextInputEditText) findViewById(R.id.loginPassword);
         Button login = (Button) findViewById(R.id.loginLogin);
 
-        Intent i = new Intent();
         login.setOnClickListener(view -> {
-            if (String.valueOf(uname.getText()).equals("admin") && String.valueOf(pword.getText()).equals("admin")) {
-                Toast.makeText(getApplicationContext(), "Successful!", Toast.LENGTH_LONG).show();
-                i.setClass(getApplicationContext(), Dashboard.class);
-                startActivity(i);
+            String u = uname.getText().toString();
+            String p = pword.getText().toString();
+
+            String h_p = Hashing.sha256().hashString(p, StandardCharsets.UTF_8).toString();
+            boolean loginb = db.accLogin(u, h_p);
+
+            if (loginb) {
+                Toast.makeText(this, "Successful!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(this, Dashboard.class));
             } else {
-                Toast.makeText(getApplicationContext(), "Invalid credentials!", Toast.LENGTH_LONG).show();
+                new AlertDialog.Builder(this)
+                        .setTitle("Error")
+                        .setMessage("Invalid credentials or account doesn't exist!")
+                        .setPositiveButton("OK", null)
+                        .setCancelable(false)
+                        .show();
             }
         });
     }

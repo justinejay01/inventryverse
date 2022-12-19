@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -14,6 +15,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class Products extends AppCompatActivity {
+
+    DBHelper db;
+    ArrayList<ModelProducts> modelProducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,20 +29,13 @@ public class Products extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        db = new DBHelper(this);
+
         RecyclerView rv = findViewById(R.id.rvProducts);
         FloatingActionButton addProductP = (FloatingActionButton) findViewById(R.id.addProductP);
 
-        ArrayList<ModelProducts> modelProducts = new ArrayList<ModelProducts>();
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 1", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 2", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 3", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 4", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 5", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 1", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 2", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 3", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 4", 500));
-        modelProducts.add(new ModelProducts(R.drawable.ic_category_24, "Sample 5", 500));
+        modelProducts = new ArrayList<ModelProducts>();
+        getAllData();
 
         AdapterProducts adapterProducts = new AdapterProducts(this, modelProducts);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -49,6 +46,15 @@ public class Products extends AppCompatActivity {
             Intent i = new Intent(this, AddProducts.class);
             startActivity(i);
         });
+    }
+
+    private void getAllData() {
+        Cursor c = db.prodGetAll();
+        if (c.getCount()>0){
+            while (c.moveToNext()) {
+                modelProducts.add(new ModelProducts(c.getInt(0), R.drawable.ic_category_24, c.getString(1), db.stocksGetCount(c.getString(1))));
+            }
+        }
     }
 
     @Override

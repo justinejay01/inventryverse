@@ -73,6 +73,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor prodGetData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT prod_id, prod_name, prod_desc, prod_note FROM products WHERE prod_id = ?", new String[] {String.valueOf(id)});
+        return c;
+    }
+
     public boolean prodAdd(int prod_id, String prod_name, String prod_desc, String prod_note) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();

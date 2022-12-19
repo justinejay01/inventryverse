@@ -40,6 +40,15 @@
             android:text="Sample Stocks"
             android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/barcProductP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageProductP"
+            android:layout_below="@id/stocksProductP"
+            android:text="Sample Barcode"
+            android:textSize="15sp" />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -37,7 +38,7 @@ public class Products extends AppCompatActivity {
         modelProducts = new ArrayList<ModelProducts>();
         getAllData();
 
-        AdapterProducts adapterProducts = new AdapterProducts(this, modelProducts);
+        AdapterProducts adapterProducts = new AdapterProducts(this, modelProducts, item -> startActivity(new Intent(getApplicationContext(), ProductView.class).putExtra("id", item.getProd_id())));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rv.setLayoutManager(linearLayoutManager);
         rv.setAdapter(adapterProducts);

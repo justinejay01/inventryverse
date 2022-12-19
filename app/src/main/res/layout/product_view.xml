@@ -6,4 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".ProductView">
 
+    <TextView
+        android:id="@+id/txtPVName0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:layout_marginStart="20dp"
+        android:textSize="25sp"
+        android:maxLines="4"
+        app:layout_constraintTop_toBottomOf="@id/txtPVName0"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVBarc0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barcode"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/txtPVName"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVBarc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barcode"
+        android:layout_marginStart="20dp"
+        android:textSize="25sp"
+        android:maxLines="4"
+        app:layout_constraintTop_toBottomOf="@id/txtPVBarc0"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVDesc0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/txtPVBarc"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_marginStart="20dp"
+        android:textSize="25sp"
+        android:maxLines="4"
+        app:layout_constraintTop_toBottomOf="@id/txtPVDesc0"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVNote0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/txtPVDesc"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPVNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note"
+        android:layout_marginStart="20dp"
+        android:textSize="25sp"
+        android:maxLines="4"
+        app:layout_constraintTop_toBottomOf="@id/txtPVNote0"
+        app:layout_constraintStart_toStartOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

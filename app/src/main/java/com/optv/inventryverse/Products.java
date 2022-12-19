@@ -43,7 +43,7 @@ public class Products extends AppCompatActivity {
         rv.setAdapter(adapterProducts);
 
         addProductP.setOnClickListener(view -> {
-            Intent i = new Intent(this, AddProducts.class);
+            Intent i = new Intent(this, ProductsAdd.class);
             startActivity(i);
         });
     }
